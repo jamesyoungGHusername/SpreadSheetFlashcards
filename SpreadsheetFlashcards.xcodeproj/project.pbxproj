@@ -16,6 +16,7 @@
 		C450F0B329182F4F00B33DCB /* SpreadsheetFlashcardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450F0B229182F4F00B33DCB /* SpreadsheetFlashcardsTests.swift */; };
 		C450F0BD29182F4F00B33DCB /* SpreadsheetFlashcardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450F0BC29182F4F00B33DCB /* SpreadsheetFlashcardsUITests.swift */; };
 		C450F0BF29182F4F00B33DCB /* SpreadsheetFlashcardsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450F0BE29182F4F00B33DCB /* SpreadsheetFlashcardsUITestsLaunchTests.swift */; };
+		C450F0CD291831E400B33DCB /* CoreXLSX in Frameworks */ = {isa = PBXBuildFile; productRef = C450F0CC291831E400B33DCB /* CoreXLSX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C450F0CD291831E400B33DCB /* CoreXLSX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +151,9 @@
 			dependencies = (
 			);
 			name = SpreadsheetFlashcards;
+			packageProductDependencies = (
+				C450F0CC291831E400B33DCB /* CoreXLSX */,
+			);
 			productName = SpreadsheetFlashcards;
 			productReference = C450F09929182F4E00B33DCB /* SpreadsheetFlashcards.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +226,9 @@
 				Base,
 			);
 			mainGroup = C450F09029182F4E00B33DCB;
+			packageReferences = (
+				C450F0CB291831E400B33DCB /* XCRemoteSwiftPackageReference "CoreXLSX" */,
+			);
 			productRefGroup = C450F09A29182F4E00B33DCB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -353,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -407,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -591,6 +599,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C450F0CB291831E400B33DCB /* XCRemoteSwiftPackageReference "CoreXLSX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CoreOffice/CoreXLSX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C450F0CC291831E400B33DCB /* CoreXLSX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C450F0CB291831E400B33DCB /* XCRemoteSwiftPackageReference "CoreXLSX" */;
+			productName = CoreXLSX;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C450F0A729182F4F00B33DCB /* SpreadsheetFlashcards.xcdatamodeld */ = {
