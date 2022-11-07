@@ -17,6 +17,9 @@
 		C450F0BD29182F4F00B33DCB /* SpreadsheetFlashcardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450F0BC29182F4F00B33DCB /* SpreadsheetFlashcardsUITests.swift */; };
 		C450F0BF29182F4F00B33DCB /* SpreadsheetFlashcardsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450F0BE29182F4F00B33DCB /* SpreadsheetFlashcardsUITestsLaunchTests.swift */; };
 		C450F0CD291831E400B33DCB /* CoreXLSX in Frameworks */ = {isa = PBXBuildFile; productRef = C450F0CC291831E400B33DCB /* CoreXLSX */; };
+		C450F0D029187DB900B33DCB /* TestSpreadsheet.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = C450F0CE2918471700B33DCB /* TestSpreadsheet.xlsx */; };
+		C450F0D2291886CD00B33DCB /* TableScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450F0D1291886CD00B33DCB /* TableScene.swift */; };
+		C450F0D42918888400B33DCB /* XLSXWorkbookLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C450F0D32918888400B33DCB /* XLSXWorkbookLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,10 @@
 		C450F0B829182F4F00B33DCB /* SpreadsheetFlashcardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpreadsheetFlashcardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C450F0BC29182F4F00B33DCB /* SpreadsheetFlashcardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetFlashcardsUITests.swift; sourceTree = "<group>"; };
 		C450F0BE29182F4F00B33DCB /* SpreadsheetFlashcardsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetFlashcardsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C450F0CE2918471700B33DCB /* TestSpreadsheet.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; name = TestSpreadsheet.xlsx; path = Assets.xcassets/TestSpreadsheet.xlsx; sourceTree = "<group>"; };
+		C450F0CF29184B3200B33DCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C450F0D1291886CD00B33DCB /* TableScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableScene.swift; sourceTree = "<group>"; };
+		C450F0D32918888400B33DCB /* XLSXWorkbookLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XLSXWorkbookLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +107,16 @@
 		C450F09B29182F4E00B33DCB /* SpreadsheetFlashcards */ = {
 			isa = PBXGroup;
 			children = (
+				C450F0CF29184B3200B33DCB /* Info.plist */,
 				C450F09C29182F4E00B33DCB /* SpreadsheetFlashcardsApp.swift */,
 				C450F09E29182F4E00B33DCB /* ContentView.swift */,
 				C450F0A029182F4F00B33DCB /* Assets.xcassets */,
+				C450F0CE2918471700B33DCB /* TestSpreadsheet.xlsx */,
 				C450F0A529182F4F00B33DCB /* Persistence.swift */,
 				C450F0A729182F4F00B33DCB /* SpreadsheetFlashcards.xcdatamodeld */,
 				C450F0A229182F4F00B33DCB /* Preview Content */,
+				C450F0D1291886CD00B33DCB /* TableScene.swift */,
+				C450F0D32918888400B33DCB /* XLSXWorkbookLoader.swift */,
 			);
 			path = SpreadsheetFlashcards;
 			sourceTree = "<group>";
@@ -201,6 +212,10 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+					"New-1",
+				);
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
@@ -245,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C450F0D029187DB900B33DCB /* TestSpreadsheet.xlsx in Resources */,
 				C450F0A429182F4F00B33DCB /* Preview Assets.xcassets in Resources */,
 				C450F0A129182F4F00B33DCB /* Assets.xcassets in Resources */,
 			);
@@ -274,7 +290,9 @@
 				C450F0A629182F4F00B33DCB /* Persistence.swift in Sources */,
 				C450F0A929182F4F00B33DCB /* SpreadsheetFlashcards.xcdatamodeld in Sources */,
 				C450F09F29182F4E00B33DCB /* ContentView.swift in Sources */,
+				C450F0D2291886CD00B33DCB /* TableScene.swift in Sources */,
 				C450F09D29182F4E00B33DCB /* SpreadsheetFlashcardsApp.swift in Sources */,
+				C450F0D42918888400B33DCB /* XLSXWorkbookLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +379,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -415,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -432,10 +450,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SpreadsheetFlashcards/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "SpreadsheetFlashcards/Preview\\ Content SpreadsheetFlashcards/Assets.xcassets/TestSpreadsheet.xlsx";
 				DEVELOPMENT_TEAM = XCBTW98MC4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SpreadsheetFlashcards/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -461,10 +480,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SpreadsheetFlashcards/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "SpreadsheetFlashcards/Preview\\ Content SpreadsheetFlashcards/Assets.xcassets/TestSpreadsheet.xlsx";
 				DEVELOPMENT_TEAM = XCBTW98MC4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SpreadsheetFlashcards/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

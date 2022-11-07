@@ -7,41 +7,59 @@
 import CoreXLSX
 import SwiftUI
 import CoreData
+import SpriteKit
+struct Row: Identifiable{
+    let test:String
+    let numberTest:String
+    let id = UUID()
+}
+
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    @StateObject var Workbooks = 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    var scene: SKScene {
+            
+            let scene = TableScene()
+            scene.size = CGSize(width: 300, height: 400)
+            scene.scaleMode = .fill
+            return scene
+        }
+    
+   
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
-        }
-    }
+        
+        SpriteView(scene: scene)
+                   .frame(width: 300, height: 400)
+                   .ignoresSafeArea()
 
+    }
+    private func loadSpreadsheet(){
+        let testURL = Bundle.main.url(forResource: "TestSpreadsheet", withExtension: "xlsx")
+        guard let file = XLSXFile(filepath: testURL!.relativePath) else {
+            fatalError("XLSX file at \(testURL?.relativePath) is corrupted or does not exist")
+        }
+        do{
+            for wbk in try file.parseWorkbooks() {
+              for (name, path) in try file.parseWorksheetPathsAndNames(workbook: wbk) {
+                if let worksheetName = name {
+                  print("This worksheet has a name: \(worksheetName)")
+                }
+              }
+            }
+        }catch{
+            print("error");
+        }
+        
+        
+        
+        
+    }
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
